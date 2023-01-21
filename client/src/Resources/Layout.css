@@ -23,7 +23,7 @@
 }
 
 .ant-layout-has-sider {
-  padding: 15px !important;
+  padding: 5px !important;
 }
 .ant-layout-sider {
   border-radius: 10px !important;
@@ -75,7 +75,7 @@
   width: 100px;
 }
 .ant-layout-content{
-  height: 80vh;
+  height: 90vh;
   overflow-y: scroll;
 }
 
