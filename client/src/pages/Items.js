@@ -135,7 +135,7 @@ console.log(editingItem);
         .post("/api/items/edit-item", {
           name: values.name,
           price: values.price,
-          image: values.image,
+          image: imageText.image,
           itemId: editingItem._id,
         })
         .then((response) => {
@@ -220,8 +220,9 @@ console.log(editingItem);
             </Form.Item>
 
             <Form.Item name="image" label="Image">
+            <Input hidden type="text" value={imageText.image} />
+            <Input  type="file" placeholder="image url" onChange={fileChangedHandler}/>
 
-              <Input  type="file" placeholder="image url" onChange={fileChangedHandler}/>
             </Form.Item>
 
             <div className="d-flex justify-content-end">
