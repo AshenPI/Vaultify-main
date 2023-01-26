@@ -10,6 +10,8 @@ import Resizer from "react-image-file-resizer";
 function Items() {
   const [itemsData, setItemsData] = useState([]);
   const [imageText, setImageText] = useState({ image: "" });
+  const [editText, setEditText] = useState({ image: "" });
+
   const [addEditModalVisabilty, setAddEditModalVisabilty] = useState(false);
   const [editingItem, setEditingItem] = useState(null);
   const dispatch = useDispatch();
@@ -36,6 +38,7 @@ function Items() {
         });
 
         setItemsData(newdata);
+        
       })
       .catch((error) => {
         dispatch({ type: "hideLoading" });
@@ -89,7 +92,18 @@ function Items() {
           <EditOutlined
             className="mx-2"
             onClick={() => {
-              setEditingItem(record);
+
+              setEditText({image :record.image});
+
+              console.log(record);
+              setEditingItem({
+    "_id": record._id,
+    "user": record.user ,
+    "name": record.name,
+    "image": editText.image,
+    "price": record.price,
+    "itemId": record.itemId
+});
               
               setAddEditModalVisabilty(true);
             }}
@@ -135,7 +149,7 @@ console.log(editingItem);
         .post("/api/items/edit-item", {
           name: values.name,
           price: values.price,
-          image: imageText.image,
+          image: editText.image,
           itemId: editingItem._id,
         })
         .then((response) => {
@@ -171,6 +185,8 @@ console.log(editingItem);
           (uri) => {
             console.log(uri);
             setImageText({ image: uri });
+            setEditText({image :uri});
+
           },
           "base64",
           200,
