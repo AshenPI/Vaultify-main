@@ -5,7 +5,8 @@ const bodyParser = require("body-parser");
 const app = express();
 app.use(express.json());
 
-
+app.use(bodyParser.json({ limit: '5mb' }));
+app.use(bodyParser.urlencoded({ extended: true, limit: '5mb' }));
 
 
 const itemsRoute = require("./routes/itemsRoute");
