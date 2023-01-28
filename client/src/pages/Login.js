@@ -25,8 +25,9 @@ function Login() {
           navigate("/home");
         })
         .catch(() => {
+          message.error("Login Failed");
           dispatch({ type: "hideloading" });
-          message.error("sOMTHING WENT WRONG");
+       
         });
 
 

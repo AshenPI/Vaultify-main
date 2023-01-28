@@ -7,13 +7,13 @@ const cry = require("../data/users");
 const bcrypt = require("bcrypt");
 const {cr} = require("../data/users");
 
-router.post("/login", async (req, res) => {
+router.post("/login", async (req, res , next) => {
   try {
     const user = await UserModel.findOne({
       userName: req.body.userName,
      
     });
-     
+
 
       // if(!user){
       //   return res.status(400).json({message:"Login failed"})
@@ -31,6 +31,7 @@ router.post("/login", async (req, res) => {
       }
     }
 
+
     const cashier = await CashierModel.findOne({
       userName: req.body.userName,
       
@@ -42,12 +43,16 @@ router.post("/login", async (req, res) => {
        
       res.send(cashier);
     }else {
-      res.status(400).json({ message: "Login failed" , user });
+      res.status(400).json({ message: "Login failed" });
+     
     }
+
   }
   } catch (error) {
+
     res.status(400).json(error);
   }
+  next()
 });
 
 
