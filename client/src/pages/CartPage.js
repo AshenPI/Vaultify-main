@@ -164,11 +164,11 @@ function CartPage() {
             </Form.Item>
 
             <Form.Item  required name="customerName" label="Customer Name" >
-              <Input placeholder="Customer name" />
+              <Input defaultValue={"."} placeholder="Customer name" />
             </Form.Item>
 
             <Form.Item  required name="customerPhoneNumber" label="Phone Number">
-              <Input  placeholder="05*********" />
+              <Input defaultValue={"."} placeholder="05*********" />
             </Form.Item>
 
             <Form.Item  required name="paymentMode" label="Payment Mode">
@@ -235,10 +235,10 @@ function CartPage() {
             </Form.Item>
 
             <Form.Item  required name="customerName" label="Customer Name" >
-              <Input placeholder="Customer name" />
+              <Input defaultValue={"."} placeholder="Customer name" />
             </Form.Item>
 
-            <Form.Item  required name="customerPhoneNumber" label="Phone Number">
+            <Form.Item defaultValue={"."}  required name="customerPhoneNumber" label="Phone Number">
               <Input placeholder="05*********" />
             </Form.Item>
 
