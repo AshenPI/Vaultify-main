@@ -31,37 +31,11 @@ function Login() {
         });
 
 
-    // axios
-    //   .post("/api/users/login", values)
-    //   .then((res) => {
-    //     dispatch({ type: "showloading" });
-    //     message.success("login successfull");
-    //     localStorage.setItem("pos-user", JSON.stringify(res.data));
-    //     navigate("/home");
-    //   })
-    //   .catch(() => {
-    //     dispatch({ type: "hideloading" });
-    //     message.error("sOMTHING WENT WRONG");
-    //   });
-
-    // axios
-    //   .post("/api/cashiers/cashier-login", values).post
-    //   .then((res) => {
-    //     dispatch({ type: "showloading" });
-    //     message.success("login successfull");
-
-    //     localStorage.setItem("pos-user", JSON.stringify(res.data));
-    //     navigate("/orders");
-    //   })
-    //   .catch(() => {
-    //     dispatch({ type: "hideloading" });
-
-    //     message.error("sOMTHING WENT WRONG");
-    //   });
+ 
   };
 
   useEffect(() => {
-   // if (localStorage.getItem("pos-user")) navigate("/home");
+  
   }, []);
 
   return (
