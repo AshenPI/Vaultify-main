@@ -234,15 +234,15 @@ function CartPage() {
               {whoIssuedBill}
             </Form.Item>
 
-            <Form.Item name="customerName" label="Customer Name" >
+            <Form.It re  required name="customerName" label="Customer Name" >
               <Input placeholder="Customer name" />
-            </Form.Item>
+            </Form.It>
 
-            <Form.Item name="customerPhoneNumber" label="Phone Number">
+            <Form.Item  required name="customerPhoneNumber" label="Phone Number">
               <Input placeholder="05*********" />
             </Form.Item>
 
-            <Form.Item name="paymentMode" label="Payment Mode">
+            <Form.Item  required name="paymentMode" label="Payment Mode">
               <Select>
                 <Select.Option value="cash"> Cash </Select.Option>
                 <Select.Option value="card"> Card/Mada </Select.Option>
