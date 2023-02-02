@@ -234,9 +234,9 @@ function CartPage() {
               {whoIssuedBill}
             </Form.Item>
 
-            <Form.It re  required name="customerName" label="Customer Name" >
+            <Form.Item  required name="customerName" label="Customer Name" >
               <Input placeholder="Customer name" />
-            </Form.It>
+            </Form.Item>
 
             <Form.Item  required name="customerPhoneNumber" label="Phone Number">
               <Input placeholder="05*********" />
