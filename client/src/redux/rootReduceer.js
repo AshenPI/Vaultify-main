@@ -6,27 +6,28 @@ const initialState = {
 export const rootReduceer = (state = initialState, action) => {
   switch (action.type) {
     default:
-      
       return state;
 
-      case "addToCart":
+    case "addToCart":
+      const itemIndex = state.cartItems.findIndex(
+        (item) => item._id === action.payload._id
+      );
 
-      const itemIndex = state.cartItems.findIndex( (item) => item._id === action.payload._id)
-
-     console.log(itemIndex)
-     if( itemIndex >= 0 ){
-
-       return{
-         ...state,
-         cartItems: [...state.cartItems[itemIndex].quantity+=1 , action.payload],
-       };
-
-     } else{
-
-     return{
-       ...state,
-       cartItems: [...state.cartItems, action.payload],
-     };}
+      console.log(itemIndex);
+      if (itemIndex >= 0) {
+        return {
+          ...state,
+          cartItems: [
+            ...(state.cartItems[itemIndex].quantity += 1),
+            action.payload,
+          ],
+        };
+      } else {
+        return {
+          ...state,
+          cartItems: [...state.cartItems, action.payload],
+        };
+      }
 
     case "updateCart":
       return {
@@ -46,25 +47,22 @@ export const rootReduceer = (state = initialState, action) => {
         ),
       };
 
-      case "showLoading":{
-        return {
-          ...state,
-          loading: true,
-        };
-      }
+    case "showLoading": {
+      return {
+        ...state,
+        loading: true,
+      };
+    }
 
-      case "hideLoading":{
-        return {
-          ...state,
-          loading: false,
-        };
-      }
+    case "hideLoading": {
+      return {
+        ...state,
+        loading: false,
+      };
+    }
 
-      case "emptyCart" : {
-return initialState
-
-      }
-
-
+    case "emptyCart": {
+      return initialState;
+    }
   }
 };
