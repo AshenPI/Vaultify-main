@@ -238,7 +238,7 @@ function CartPage() {
               <Input  placeholder="Customer name" />
             </Form.Item>
 
-            <Form.Item  required name="customerPhoneNumber" label="Phone Number">
+            <Form.Item   name="customerPhoneNumber" label="Phone Number">
               <Input placeholder="05*********" />
             </Form.Item>
 
