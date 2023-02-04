@@ -171,7 +171,10 @@ function CartPage() {
               <Input  placeholder="05*********" />
             </Form.Item>
 
-            <Form.Item  required name="paymentMode" label="Payment Mode">
+              <Form.Item
+              validateStatus="error"
+              help="Must choose Payment Mode." 
+              rules={[{ required: true }]} required name="paymentMode" label="Payment Mode">
               <Select  >
                 <Select.Option value="cash"> Cash </Select.Option>
                 <Select.Option value="card"> Card/Mada </Select.Option>
@@ -242,8 +245,11 @@ function CartPage() {
               <Input placeholder="05*********" />
             </Form.Item>
 
-            <Form.Item  required name="paymentMode" label="Payment Mode">
-              <Select>
+              <Form.Item
+              validateStatus="error"
+              help="Must choose Payment Mode." 
+              rules={[{ required: true }]} required name="paymentMode" label="Payment Mode">
+              <Select  >
                 <Select.Option value="cash"> Cash </Select.Option>
                 <Select.Option value="card"> Card/Mada </Select.Option>
               </Select>
