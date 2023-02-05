@@ -163,15 +163,18 @@ function CartPage() {
               {whoIssuedBill}
             </Form.Item>
 
-            <Form.Item  required name="customerName" label="Customer Name" >
-              <Input defaultValue={"."} placeholder="Customer name" />
+            <Form.Item   name="customerName" label="Customer Name" >
+              <Input  placeholder="Customer name" />
             </Form.Item>
 
-            <Form.Item  required name="customerPhoneNumber" label="Phone Number">
-              <Input defaultValue={"."} placeholder="05*********" />
+            <Form.Item  name="customerPhoneNumber" label="Phone Number">
+              <Input  placeholder="05*********" />
             </Form.Item>
 
-            <Form.Item  required name="paymentMode" label="Payment Mode">
+              <Form.Item
+              validateStatus="error"
+              help="Must choose Payment Mode." 
+              rules={[{ required: true }]} required name="paymentMode" label="Payment Mode">
               <Select  >
                 <Select.Option value="cash"> Cash </Select.Option>
                 <Select.Option value="card"> Card/Mada </Select.Option>
@@ -237,14 +240,20 @@ function CartPage() {
             <Form.Item  required name="customerName" label="Customer Name" >
               <Input placeholder="Customer name" />
               <Input defaultValue={"."} placeholder="Customer name" />
+            <Form.Item   name="customerName" label="Customer Name" >
+              <Input  placeholder="Customer name" />
+            </Form.Item>
             </Form.Item>
 
-            <Form.Item defaultValue={"."}  required name="customerPhoneNumber" label="Phone Number">
+            <Form.Item   name="customerPhoneNumber" label="Phone Number">
               <Input placeholder="05*********" />
             </Form.Item>
 
-            <Form.Item  required name="paymentMode" label="Payment Mode">
-              <Select>
+              <Form.Item
+              validateStatus="error"
+              help="Must choose Payment Mode." 
+              rules={[{ required: true }]} required name="paymentMode" label="Payment Mode">
+              <Select  >
                 <Select.Option value="cash"> Cash </Select.Option>
                 <Select.Option value="card"> Card/Mada </Select.Option>
               </Select>
