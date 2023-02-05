@@ -3,7 +3,7 @@ const UserModel = require("../models/userModel");
 const CashierModel = require("../models/cashiersModel");
 const router = express.Router();
 const bcrypt = require("bcrypt");
-
+const validate = require("express-validator");
 
 router.post("/login", async (req, res, next) => {
   try {
@@ -36,10 +36,31 @@ router.post("/login", async (req, res, next) => {
   next();
 });
 
+router.put("/edit-admin", async (req, res) => {
+  try {
+     
+      
+       await UserModel.findOneAndUpdate({userName: req.body.userName} , req.body);
+              
+          
+      res.send('admin updated successfully')
+  } catch (error) {
+      res.status(400).json(error);
+  }
+});
+
 router.post("/register", async (req, res) => {
   try {
-    const newuser = new UserModel({ ...req.body, isAdmin: false });
-    await newuser.save();
+   
+    const reg = new RegExp("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$");
+    const newuser = new UserModel({isAdmin: false  , ...req.body });
+
+
+    
+      await newuser.save();
+  
+
+      
     res.send("User Registered successfully");
   } catch (error) {
     res.status(400).json(error);

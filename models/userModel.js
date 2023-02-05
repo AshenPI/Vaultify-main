@@ -13,15 +13,20 @@ const userSchema = mongoose.Schema({
   
   
 }, {timestamps : true});
+userSchema.pre("findOneAndUpdate", async function(next) {
 
-// userSchema.methods.joiValidate = function(obj){
 
-//   var schema = Joi.object({
-//     userName: Joi.types.String().min(6).max(30).required(),
-// 		password: Joi.types.String().min(3).max(8).required(),
-//   })
-//   return Joi.validate(obj , schema);
-// }
+  try {
+   if (this._update.password) {
+     const hashed = await bcrypt.hash(this._update.password, 10);
+     this._update.password = hashed;
+   }
+   next();
+ } catch (err) {
+   return next(err);
+ }
+
+})
 
 userSchema.pre("save", function (next) {
   const user = this

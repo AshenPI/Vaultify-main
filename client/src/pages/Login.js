@@ -61,7 +61,7 @@ function Login() {
             </Form.Item>
 
             <Form.Item name="password" label="Password">
-              <Input minLength="6" type="password" placeholder="Password" />
+              <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" type="password" placeholder="Password" />
             </Form.Item>
 
             <div className="d-flex justify-content-between align-items-center">
