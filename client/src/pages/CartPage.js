@@ -237,12 +237,8 @@ function CartPage() {
               {whoIssuedBill}
             </Form.Item>
 
-            <Form.Item  required name="customerName" label="Customer Name" >
-              <Input placeholder="Customer name" />
-              <Input defaultValue={"."} placeholder="Customer name" />
             <Form.Item   name="customerName" label="Customer Name" >
               <Input  placeholder="Customer name" />
-            </Form.Item>
             </Form.Item>
 
             <Form.Item   name="customerPhoneNumber" label="Phone Number">
