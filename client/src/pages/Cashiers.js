@@ -205,7 +205,7 @@ function Cashiers() {
               </Form.Item>
 
               <Form.Item   name="password"  label="password">
-                <Input maxLength="8" defaultValue={`${
+                <Input minLength="6" defaultValue={`${
                 editingCashier !== null
                   ? "" 
                   : ""
@@ -270,7 +270,7 @@ function Cashiers() {
               </Form.Item>
 
               <Form.Item name="password" label="password">
-                <Input maxLength="8" placeholder="password" />
+                <Input minLength="6" placeholder="password" />
               </Form.Item>
 
               <div className="d-flex justify-content-end">

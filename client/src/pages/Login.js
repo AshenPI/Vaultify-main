@@ -61,7 +61,7 @@ function Login() {
             </Form.Item>
 
             <Form.Item name="password" label="Password">
-              <Input maxLength="8" type="password" placeholder="Password" />
+              <Input minLength="6" type="password" placeholder="Password" />
             </Form.Item>
 
             <div className="d-flex justify-content-between align-items-center">
