@@ -10,7 +10,7 @@ router.post("/login", async (req, res, next) => {
     const user = await UserModel.findOne({
       userName: req.body.userName,
     });
-
+     
     if (user) {
       if (await bcrypt.compare(req.body.password, user.password)) {
         res.send(user);
