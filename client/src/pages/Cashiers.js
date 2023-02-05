@@ -154,6 +154,7 @@ function Cashiers() {
     }
   };
 
+  //regex expression Minimum eight characters, at least one letter and one number
   if (JSON.parse(localStorage.getItem("pos-user")).isAdmin === true) {
     return (
       <DefaultLayout>
@@ -183,6 +184,7 @@ function Cashiers() {
             }`}
             footer={false}
           >
+        
             <Form
               // initialValues={editingCashier}
               layout="vertical"
@@ -203,13 +205,16 @@ function Cashiers() {
                   : ""
                  }`} />
               </Form.Item>
-
-              <Form.Item   name="password"  label="password">
-                <Input defaultValue={`${
+                  {
+                    // regex Minimum eight characters, at least one letter and one number
+                  }
+              <Form.Item    name="password"  label="password">
+                <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" defaultValue={`${
                 editingCashier !== null
                   ? "" 
                   : ""
                  }`} placeholder="password" />
+                 <p>Minimum eight characters, at least one letter and one number</p>
               </Form.Item>
 
               <div className="d-flex justify-content-end">
@@ -270,7 +275,8 @@ function Cashiers() {
               </Form.Item>
 
               <Form.Item name="password" label="password">
-                <Input placeholder="password" />
+                <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="password" />
+                <p>Minimum eight characters, at least one letter and one number</p>
               </Form.Item>
 
               <div className="d-flex justify-content-end">

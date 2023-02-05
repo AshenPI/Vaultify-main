@@ -1,17 +1,32 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
-const saltRounds = 10;
+const Joi = require("joi");
+
 const userSchema = mongoose.Schema({
 
-  name: { type: String, required: true },
-  userName: { type: String, required: true , unique: true},
+  name:{ type: String, required: true },
+  userName: { type:String, required: true , unique: true},
   isAdmin: {type : Boolean , required:true},
   userId: { type: String, },
-  password: { type: String, required: true },
+  password: { type: String, required: true  },
     
   
   
 }, {timestamps : true});
+userSchema.pre("findOneAndUpdate", async function(next) {
+
+
+  try {
+   if (this._update.password) {
+     const hashed = await bcrypt.hash(this._update.password, 10);
+     this._update.password = hashed;
+   }
+   next();
+ } catch (err) {
+   return next(err);
+ }
+
+})
 
 userSchema.pre("save", function (next) {
   const user = this
