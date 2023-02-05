@@ -136,7 +136,7 @@ function Cashiers() {
       axios
         .put("/api/cashiers/edit-cashier", {
           ...values,
-           cashierId: editingCashier._id,
+          cashierId: editingCashier._id,
         })
         .then((response) => {
           dispatch({ type: "hideLoading" });
@@ -184,37 +184,38 @@ function Cashiers() {
             }`}
             footer={false}
           >
-        
             <Form
               // initialValues={editingCashier}
               layout="vertical"
               onFinish={onFinish}
             >
-              <Form.Item name="name" label="Name" >
-                <Input defaultValue={`${
-                editingCashier !== null
-                  ? editingCashier.name 
-                  : ""
-                 }`} placeholder="Name" />
+              <Form.Item name="name" label="Name">
+                <Input
+                  defaultValue={`${
+                    editingCashier !== null ? editingCashier.name : ""
+                  }`}
+                  placeholder="Name"
+                />
               </Form.Item>
 
               <Form.Item name="userName" label="username">
-                <Input placeholder="usrename" defaultValue={`${
-                editingCashier !== null
-                  ? editingCashier.userName 
-                  : ""
-                 }`} />
+                <Input
+                  placeholder="username"
+                  defaultValue={`${
+                    editingCashier !== null ? editingCashier.userName : ""
+                  }`}
+                />
               </Form.Item>
-                  {
-                    // regex Minimum eight characters, at least one letter and one number
-                  }
-              <Form.Item    name="password"  label="password">
-                <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" defaultValue={`${
-                editingCashier !== null
-                  ? "" 
-                  : ""
-                 }`} placeholder="password" />
-                 <p>Minimum eight characters, at least one letter and one number</p>
+
+              <Form.Item name="password" label="password">
+                <Input
+                  minLength="8"
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                  defaultValue={`${editingCashier !== null ? "" : ""}`}
+                  placeholder="password"
+                />
+                 <p>Start with characters, Minimum eight characters, at least one letter and one number</p>
+      
               </Form.Item>
 
               <div className="d-flex justify-content-end">
@@ -275,8 +276,14 @@ function Cashiers() {
               </Form.Item>
 
               <Form.Item name="password" label="password">
-                <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="password" />
-                <p>Minimum eight characters, at least one letter and one number</p>
+                <Input
+                  minLength="8"
+                  pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
+                  placeholder="password"
+                />
+                <p>
+                  Minimum eight characters, at least one letter and one number
+                </p>
               </Form.Item>
 
               <div className="d-flex justify-content-end">
@@ -293,7 +300,7 @@ function Cashiers() {
         )}
       </DefaultLayout>
       )
-    </CashierLayout>
+    </CashierLayout>;
   }
 }
 

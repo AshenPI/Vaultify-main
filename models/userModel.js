@@ -13,6 +13,7 @@ const userSchema = mongoose.Schema({
   
   
 }, {timestamps : true});
+
 userSchema.pre("findOneAndUpdate", async function(next) {
 
 

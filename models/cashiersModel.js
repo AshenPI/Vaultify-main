@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+
 const cashiersSchema = mongoose.Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId , 

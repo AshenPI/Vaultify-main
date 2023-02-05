@@ -63,6 +63,8 @@ function Login() {
             <Form.Item name="password" label="Password">
               <Input minLength="8" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" type="password" placeholder="Password" />
             </Form.Item>
+            
+           {/* regex Minimum eight characters, at least one letter and one number */}
 
             <div className="d-flex justify-content-between align-items-center">
           
