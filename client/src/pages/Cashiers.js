@@ -117,8 +117,8 @@ function Cashiers() {
     if (editingCashier == null) {
       axios
         .post("/api/cashiers/add-cashier", {
-          ...values,
-          user: JSON.parse(localStorage.getItem("pos-user"))._id,
+         ...values,
+          user: JSON.parse(localStorage.getItem("pos-user"))._id
         })
         .then((response) => {
           dispatch({ type: "hideLoading" });
@@ -163,7 +163,7 @@ function Cashiers() {
           <Button
             type="primary"
             onClick={() => setAddEditModalVisabilty(true)}
-            set
+            
           >
             Add new employee
           </Button>
@@ -211,13 +211,19 @@ function Cashiers() {
                 <Input
                   minLength="8"
                   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
-                  defaultValue={`${editingCashier !== null ? "" : ""}`}
                   placeholder="password"
+                  defaultValue={`${
+                    editingCashier !== null ? editingCashier.name : ""
+                  }`}
+                    
                 />
-                 <p>Start with characters, Minimum eight characters, at least one letter and one number</p>
-      
+              
               </Form.Item>
+              <p>
+                  Minimum eight characters, at least one letter and one number
+                </p>   
 
+                
               <div className="d-flex justify-content-end">
                 <Button htmlType="submit" type="primary">
                   {`${
@@ -300,7 +306,7 @@ function Cashiers() {
         )}
       </DefaultLayout>
       )
-    </CashierLayout>;
+    </CashierLayout>
   }
 }
 

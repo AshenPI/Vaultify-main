@@ -10,7 +10,6 @@ import Orders from './pages/Orders';
 
 function App() {
 
- // console.log(localStorage.getItem('pos-user').name == "x")
   return (
     <div className="App">
 
