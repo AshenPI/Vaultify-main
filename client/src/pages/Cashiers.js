@@ -222,6 +222,8 @@ function Cashiers() {
               <p>
                   Minimum eight characters, at least one letter and one number
                 </p>   
+
+                
               <div className="d-flex justify-content-end">
                 <Button htmlType="submit" type="primary">
                   {`${
