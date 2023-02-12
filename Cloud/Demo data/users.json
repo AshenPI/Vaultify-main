@@ -1,0 +1,79 @@
+[{
+  "_id": {
+    "$oid": "63c5de8242c7b99783798df2"
+  },
+  "name": "kfc",
+  "userName": "kfc",
+  "isAdmin": false,
+  "userId": "2",
+  "password": "kfc",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1673911938422"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1673911938422"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "63d2bca83e02d3e1a5d9cc01"
+  },
+  "name": "Carebo",
+  "userName": "Carebo",
+  "isAdmin": false,
+  "password": "$2b$10$NEPeu6i78xlUIFYGF1CYJuSiwaQL1UvFY94EGxri1ntvanDd2QuzW",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674755240489"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1674755240489"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63d2bef462704078b417bde2"
+  },
+  "name": "KUDU",
+  "userName": "kudu",
+  "isAdmin": true,
+  "password": "$2b$10$Ahc.nd9yFJf5.pafBHw6g.JnxO6xBNO7GPIMHbdBLcAZpB.6.FbF6",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1674755828093"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1675623191765"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63dff9940e38f82cd7b4437f"
+  },
+  "name": "macccc",
+  "userName": "macc",
+  "isAdmin": true,
+  "userId": "1",
+  "password": "$2b$10$8CIOIqvXYXe11fXdRKvnAutt/ythdqZXYQBC3h/2FaGiuAhJzt40e",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1675622804605"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1675625881368"
+    }
+  },
+  "__v": 0
+}]
