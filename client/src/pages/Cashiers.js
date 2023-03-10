@@ -212,9 +212,6 @@ function Cashiers() {
                   minLength="8"
                   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"
                   placeholder="password"
-                  defaultValue={`${
-                    editingCashier !== null ? editingCashier.name : ""
-                  }`}
                     
                 />
               
